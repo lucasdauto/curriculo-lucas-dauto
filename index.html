@@ -12,87 +12,175 @@
             color: #333;
             padding: 0;
             margin: 0;
+            line-height: 1.5; /* Reduzir espaçamento entre linhas */
         }
 
         #curriculo {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 20px 30px;
+            max-width: 800px;
+            margin: 0 auto; /* Remover margem superior */
+            padding: 20px; /* Reduzir padding */
             background: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-            font-size: 14px;
-            line-height: 1.5;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 12px; /* Diminuir tamanho da fonte geral */
         }
 
         h1 {
-            font-size: 24px;
-            margin-bottom: 4px;
+            font-size: 24px; /* Diminuir tamanho do título */
+            margin-bottom: 8px;
+            color: #0056b3;
+            text-align: center;
         }
 
         h2 {
-            font-size: 16px;
+            font-size: 16px; /* Diminuir tamanho do subtítulo */
             margin-top: 20px;
-            color: #444;
-            border-bottom: 1px solid #ccc;
-        }
-
-        .top-info {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            font-size: 13px;
-            margin-bottom: 10px;
-        }
-
-        .contact a {
-            text-decoration: none;
-            color: #0073b1;
-        }
-
-        ul {
-            margin: 5px 0 10px 20px;
-            padding: 0;
-        }
-
-        .skills span {
-            background: #eee;
-            border-radius: 3px;
-            padding: 3px 8px;
-            margin: 2px;
-            display: inline-block;
-            font-size: 13px;
-        }
-
-        #download-btn {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            background-color: #0073b1;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 14px;
-            cursor: pointer;
-        }
-
-        #download-btn:hover {
-            background-color: #005a8d;
+            margin-bottom: 8px;
+            color: #222;
+            border-bottom: 1px solid #0056b3; /* Reduzir espessura da borda */
+            padding-bottom: 3px;
         }
 
         .header {
             text-align: center;
+            margin-bottom: 10px; /* Reduzir margem inferior */
+        }
+
+        .header p {
+            font-size: 14px; /* Diminuir tamanho da fonte */
+            color: #555;
+            margin-top: 5px;
         }
 
         .top-info {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 4px;
+            justify-content: center;
+            flex-wrap: wrap;
+            font-size: 12px; /* Diminuir tamanho da fonte */
+            margin-top: 10px; /* Reduzir margem superior */
+            gap: 10px; /* Reduzir espaçamento entre elementos */
         }
 
+        .top-info div {
+            display: flex;
+            align-items: center;
+        }
+
+        .top-info div span {
+            margin-right: 5px;
+            color: #0056b3;
+        }
+
+        .contact a {
+            text-decoration: none;
+            color: #0056b3;
+            transition: color 0.3s ease;
+        }
+
+        .contact a:hover {
+            color: #007bff;
+        }
+
+        ul {
+            margin: 5px 0 10px 20px; /* Reduzir margens */
+            padding: 0;
+            list-style: disc;
+        }
+
+        li {
+            margin-bottom: 6px; /* Reduzir espaçamento entre itens */
+        }
+
+        .skills-languages {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px; /* Reduzir espaçamento entre colunas */
+            margin-bottom: 15px; /* Reduzir margem inferior */
+        }
+
+        .skills-languages > div {
+            flex: 1;
+        }
+
+        .skills span {
+            background: #e0f2f7;
+            color: #0056b3;
+            border-radius: 4px;
+            padding: 4px 8px; /* Reduzir padding */
+            margin: 3px 3px 3px 0; /* Reduzir margens */
+            display: inline-block;
+            font-size: 11px; /* Diminuir tamanho da fonte */
+            white-space: nowrap;
+        }
+
+        .experience p {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        .experience em {
+            font-weight: normal;
+            color: #666;
+            font-size: 11px; /* Diminuir tamanho da fonte */
+        }
+
+        #download-btn {
+            display: block;
+            margin: 15px auto; /* Reduzir margem */
+            padding: 8px 15px; /* Reduzir padding */
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 12px; /* Diminuir tamanho da fonte */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #download-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Otimizações para impressão (PDF) */
         @media print {
-            #download-btn {
-                display: none;
+            html,
+            body {
+                margin-top: 0.2in !important; /* Reduzir margem superior */
+                margin-right: 0 !important;
+                margin-bottom: 0 !important;
+                margin-left: 0 !important;
+                padding: 0 !important;
+                height: 100% !important;
+                font-size: 11px !important; /* Diminuir tamanho da fonte para impressão */
+            }
+
+            #curriculo {
+                margin: 0 !important;
+                padding: 0 !important; /* Remover padding */
+                max-width: 100% !important;
+                box-shadow: none !important;
+            }
+
+            h1,
+            h2 {
+                margin: 3px 0 !important;
+            }
+
+            .contact {
+                margin: 5px 0 !important;
+                gap: 5px !important;
+                font-size: 10px !important; /* Diminuir tamanho da fonte */
+            }
+
+            .section {
+                margin-top: 10px !important; /* Reduzir margem */
+            }
+
+            .skills span,
+            .tags span {
+                margin: 3px !important;
+                padding: 3px 6px !important;
+                font-size: 10px !important; /* Diminuir tamanho da fonte */
             }
         }
     </style>
@@ -108,53 +196,80 @@
             <p><strong>Desenvolvedor Back-end PHP</strong></p>
 
             <div class="top-info">
-                <div>
-                    📧 <a href="mailto:lucasdauto@gmail.com">lucasdauto@gmail.com</a> |
-                    📱 <a href="tel:+5511953746414">(11) 95374-6414</a> |
-                    📍 São Paulo - SP
+                <div class="contact">
+                    <span>📧</span> <a href="mailto:lucasdauto@gmail.com">lucasdauto@gmail.com</a>
+                </div>
+                <div class="contact">
+                    <span>📱</span> <a href="tel:+5511953746414">(11) 95374-6414</a>
                 </div>
                 <div>
-                    🔗 <a href="https://www.linkedin.com/in/lucasdauto">linkedin.com/in/lucasdauto</a> |
-                    <a href="https://github.com/lucasdauto">github.com/lucasdauto</a>
+                    <span>📍</span> São Paulo - SP
+                </div>
+                <div class="contact">
+                    <span>🔗</span> <a href="https://www.linkedin.com/in/lucasdauto">linkedin.com/in/lucasdauto</a>
+                </div>
+                <div class="contact">
+                    <span>🔗</span> <a href="https://github.com/lucasdauto">github.com/lucasdauto</a>
                 </div>
             </div>
         </div>
 
-        <h2>Sobre mim</h2>
-        <p>Desenvolvedor back-end com mais de 5 anos de experiência em PHP e frameworks como Laravel, com sólida atuação na criação de APIs RESTful, integração de sistemas e manutenção de aplicações. Formado em Sistemas para Internet pela FATEC, com passagem pela Estação Hack do Facebook. Destaque por assumir responsabilidades técnicas e coordenar o ciclo completo de desenvolvimento na empresa atual. Entusiasta de boas práticas, testes automatizados e sempre em busca de evolução profissional.</p>
-
-        <h2>Skills</h2>
-        <div class="skills">
-            <span>PHP</span><span>Laravel</span><span>PHPUnit</span><span>FastAPI</span>
-            <span>JavaScript</span><span>Vue.js</span><span>Node.js</span><span>Python</span>
-            <span>Docker</span><span>MySQL</span><span>Git</span><span>WordPress</span><span>GCP (básico)</span>
+        <div class="skills-languages">
+            <div>
+                <h2>Skills</h2>
+                <div class="skills">
+                    <span>PHP</span><span>Laravel</span><span>PHPUnit</span><span>FastAPI</span>
+                    <span>Vue.js</span><span>Node.js</span><span>Python</span>
+                    <span>Docker</span><span>MySQL</span><span>GCP</span>
+                </div>
+            </div>
+            <div>
+                <h2>Idiomas</h2>
+                <p>Inglês - Intermediário</p>
+            </div>
         </div>
 
-        <h2>Idiomas</h2>
-        <p>Inglês - Intermediário</p>
+        <h2>Sobre mim</h2>
+        <p>Desenvolvedor back-end com mais de 5 anos de experiência em PHP e frameworks como Laravel, com sólida atuação
+            na criação de APIs RESTful, integração de sistemas e manutenção de aplicações. Formado em Sistemas para
+            Internet pela FATEC, com passagem pela Estação Hack do Facebook. Destaque por assumir responsabilidades
+            técnicas e coordenar o ciclo completo de desenvolvimento na empresa atual. Entusiasta de boas práticas,
+            testes automatizados e sempre em busca de evolução profissional.</p>
 
         <h2>Formação</h2>
         <p><strong>Sistemas para Internet</strong> – FATEC Carapicuíba (Conclusão: Junho de 2020)</p>
 
         <h2>Experiência</h2>
-        <p><strong>Desenvolvedor Full-stack Pleno</strong> – Redação Online <em>(04/2022 – Atual)</em></p>
-        <ul>
-            <li>Arquitetura e desenvolvimento de sistemas e APIs RESTful com Laravel e FastAPI.</li>
-            <li>Atuação como Scrum Master, promovendo boas práticas técnicas e de equipe.</li>
-        </ul>
+        <div class="experience">
+            <p><strong>Desenvolvedor Full-stack Pleno</strong> – Redação Online <em>(04/2022 – Atual)</em></p>
+            <ul>
+                <li>Responsável por toda a área de desenvolvimento da empresa, atuando desde a arquitetura de sistemas
+                    até a implementação e manutenção de APIs RESTful com Laravel e FastAPI. Além disso, exerce o papel
+                    de Scrum Master, garantindo o fluxo ágil de trabalho da equipe e promovendo boas práticas de
+                    desenvolvimento.</li>
+            </ul>
+        </div>
 
-        <p><strong>Desenvolvedor Back-end Júnior</strong> – Secretaria Municipal de Cultura <em>(01/2020 – 04/2022)</em>
-        </p>
-        <ul>
-            <li>Desenvolvimento e manutenção de sistemas internos e sites institucionais.</li>
-            <li>Suporte a usuários e orientação de estagiários.</li>
-        </ul>
+        <div class="experience">
+            <p><strong>Desenvolvedor Back-end Júnior</strong> – Secretaria Municipal de Cultura <em>(01/2020 –
+                    04/2022)</em></p>
+            <ul>
+                <li>Fui responsável pelo desenvolvimento de novos sites e pela implementação de funcionalidades em
+                    sistemas internos existentes. Atuei também no suporte aos usuários, prestando auxílio em cadastros,
+                    esclarecimento de dúvidas e orientações técnicas. Além disso, acompanhei e orientei estagiários em
+                    suas atividades diárias.</li>
+            </ul>
+        </div>
 
-        <p><strong>Auxiliar de Instrutor</strong> – Master Tech <em>(10/2019 – 12/2019)</em></p>
-        <ul>
-            <li>Instrutor técnico no programa Jovens Talentos Digitais Diversos.</li>
-            <li>Mentoria em HTML5, CSS3 e Python para mais de 100 alunos.</li>
-        </ul>
+        <div class="experience">
+            <p><strong>Auxiliar de Instrutor</strong> – Master Tech <em>(10/2019 – 12/2019)</em></p>
+            <ul>
+                <li>Atuei por dois meses como NINJA (Need Information Now Just Ask) no programa Jovens Talentos Digitais
+                    Diversos, onde compartilhei conhecimentos em Front-End (HTML5, CSS3) e Back-End (Python) com mais de
+                    100 alunos. Contribuí para o desenvolvimento profissional dos participantes por meio de orientação
+                    técnica e suporte em atividades práticas de programação.</li>
+            </ul>
+        </div>
 
         <h2>Conquistas</h2>
         <ul>
@@ -166,11 +281,11 @@
         document.getElementById('download-btn').addEventListener('click', function () {
             const element = document.getElementById('curriculo');
             html2pdf().set({
-                margin: 0.2,
+                margin: [0.2, 0, 0, 0], // Margem superior reduzida (0.2 polegadas)
                 filename: 'Curriculo_Lucas_Dauto.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+                image: { type: 'jpeg', quality: 1 },
+                html2canvas: { scale: 2, logging: true, dpi: 192, scrollX: 0, scrollY: 0 }, // Ajustar para evitar deslocamento
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
             }).from(element).save();
         });
     </script>
