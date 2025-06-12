@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Currículo - Lucas Dauto</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #fdfdfd;
+      color: #333;
+    }
+
+    #curriculo {
+      max-width: 800px;
+      margin: auto;
+      padding: 30px;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-size: 20px;
+      color: #555;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 4px;
+    }
+
+    .section {
+      margin-bottom: 25px;
+    }
+
+    .contact a {
+      color: #0073b1;
+      text-decoration: none;
+    }
+
+    .skills {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .skills span {
+      background: #eee;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .role {
+      font-weight: bold;
+    }
+
+    .date {
+      font-style: italic;
+      color: #666;
+    }
+
+    #download-btn {
+      display: block;
+      margin: 20px auto 40px;
+      padding: 10px 20px;
+      background-color: #0073b1;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #download-btn:hover {
+      background-color: #005a8d;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="download-btn">📄 Baixar Currículo em PDF</button>
+
+  <div id="curriculo">
+    <h1>Lucas Dauto</h1>
+    <p><strong>Desenvolvedor Back-end</strong></p>
+
+    <div class="section contact">
+      <p>📧 <a href="mailto:lucasdauto@gmail.com">lucasdauto@gmail.com</a> | 📱 <a href="tel:+5511953746414">(11) 95374-6414</a> | 📍 São Paulo - SP</p>
+      <p>🔗 <a href="https://www.linkedin.com/in/lucasdauto/">linkedin.com/in/lucasdauto</a> | <a href="https://github.com/lucasdauto">github.com/lucasdauto</a></p>
+    </div>
+
+    <div class="section">
+      <h2>Sobre mim</h2>
+      <p>Sou um desenvolvedor back-end com quatro anos de experiência em desenvolvimento web utilizando PHP. Minha formação inclui um diploma em Tecnologia em Sistemas para Internet pela FATEC, e eu também tive o privilégio de ser um ex-aluno da Estação Hack do Facebook. Sou uma pessoa engajada em comunidades e eventos relevantes de TI, buscando constantemente ampliar meus conhecimentos e habilidades na área.</p>
+    </div>
+
+    <div class="section">
+      <h2>Skills</h2>
+      <div class="skills">
+        <span>PHP</span>
+        <span>Laravel</span>
+        <span>NodeJS</span>
+        <span>Python</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Idiomas</h2>
+      <p>Inglês</p>
+    </div>
+
+    <div class="section">
+      <h2>Formação</h2>
+      <ul>
+        <li><strong>Sistemas para Internet</strong> – FATEC Carapicuíba (08/2016 – 06/2020)</li>
+        <li><strong>Análise e Desenvolvimento de Sistemas</strong> – FMU (02/2014)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Experiência</h2>
+      <p class="role">Desenvolvedor PHP Pleno – Redação Online <span class="date">(04/2022 – Presente)</span></p>
+      <ul>
+        <li>Desenvolvimento de novas funcionalidades e manutenção de APIs RESTful com Laravel.</li>
+        <li>Atuação como Scrum Master auxiliando na organização da equipe e metodologia ágil.</li>
+      </ul>
+
+      <p class="role">Desenvolvedor PHP Júnior – Secretaria Municipal de Cultura <span class="date">(01/2020 – 04/2022)</span></p>
+      <ul>
+        <li>Desenvolvimento de sites e funcionalidades em sistemas internos.</li>
+        <li>Suporte a usuários e orientação a estagiários.</li>
+      </ul>
+
+      <p class="role">Auxiliar de Instrutor – Mastertech <span class="date">(10/2019 – 12/2019)</span></p>
+      <ul>
+        <li>Instrutor na iniciativa Jovens Talentos Digitais Diversos (Front-End e Python).</li>
+        <li>Mentoria para mais de 100 alunos.</li>
+      </ul>
+
+      <p class="role">Auxiliar de Instrutor – Estação Hack (Facebook) <span class="date">(06/2019)</span></p>
+      <ul>
+        <li>Atuação como NINJA em workshop com mais de 100 alunos, apoio no desenvolvimento de sites.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Conquistas</h2>
+      <ul>
+        <li>🏆 2º lugar geral e vencedor na categoria inovação – Hackathon Game Jam | Facebook 2019</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('download-btn').addEventListener('click', function () {
+      const element = document.getElementById('curriculo');
+      html2pdf().set({
+        margin: 0.5,
+        filename: 'curriculo_lucas_dauto.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+      }).from(element).save();
+    });
+  </script>
+
+</body>
+</html>
